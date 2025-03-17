@@ -22,21 +22,15 @@
     </style>
   </head>
   <body>
+    <div class="tezoro-container">
+      <div id="tezoro-widget"></div>
+    </div>
     <script>
       const script = document.createElement("script");
-      script.src = `https://tezoro.io/widget.js?t=${Date.now()}`;
+      script.src = `https://tezoro-rebalancing-widget.vercel.app/widget.js?t=${Date.now()}`;
       document.body.appendChild(script);
 
       script.addEventListener("load", () => {
-        document.body.insertAdjacentHTML(
-          "beforeend",
-          `
-            <div class="tezoro-container">
-              <div id="tezoro-widget"></div>
-            </div>
-          `
-        );
-
         TezoroWidget.init("tezoro-widget");
       });
     </script>
